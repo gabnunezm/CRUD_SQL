@@ -141,6 +141,7 @@
             btnGuardar.TabIndex = 11;
             btnGuardar.Text = "GUARDAR";
             btnGuardar.UseVisualStyleBackColor = true;
+            btnGuardar.Click += btnGuardar_Click;
             // 
             // btnEditar
             // 
@@ -150,6 +151,7 @@
             btnEditar.TabIndex = 12;
             btnEditar.Text = "EDITAR";
             btnEditar.UseVisualStyleBackColor = true;
+            btnEditar.Click += btnEditar_Click;
             // 
             // btnEliminar
             // 
@@ -159,6 +161,7 @@
             btnEliminar.TabIndex = 13;
             btnEliminar.Text = "BORRAR";
             btnEliminar.UseVisualStyleBackColor = true;
+            btnEliminar.Click += btnEliminar_Click;
             // 
             // Form1
             // 

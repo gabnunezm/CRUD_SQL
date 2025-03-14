@@ -31,20 +31,20 @@ namespace CapaDatos
 
         public void Insertar(string nombre, string desc, string marca, double precio, int stock)
         {
-            comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "InsetarProductos";
-            comando.CommandType = CommandType.StoredProcedure;
-            comando.Parameters.AddWithValue("@nombre", nombre);
-            comando.Parameters.AddWithValue("@descrip", desc);
-            comando.Parameters.AddWithValue("@Marca", marca);
-            comando.Parameters.AddWithValue("@precio", precio);
-            comando.Parameters.AddWithValue("@stock", precio);
+            using (SqlCommand comando = new SqlCommand())
+            {
+                comando.Connection = conexion.AbrirConexion();
+                comando.CommandText = "InsetarProductos";
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@nombre", nombre);
+                comando.Parameters.AddWithValue("@descrip", desc);
+                comando.Parameters.AddWithValue("@marca", marca);
+                comando.Parameters.AddWithValue("@precio", precio);
+                comando.Parameters.AddWithValue("@stock", stock);
 
-            comando.ExecuteNonQuery();
-
-            comando.Parameters.Clear();
-            conexion.CerrarConexion();
-
+                comando.ExecuteNonQuery();
+                conexion.CerrarConexion();
+            }
         }
 
         public void Editar(string nombre, string desc, string marca, double precio, int stock, int id)

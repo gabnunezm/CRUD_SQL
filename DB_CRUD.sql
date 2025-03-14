@@ -1,5 +1,6 @@
 create database Practica
 go
+Use Practica
 
 select * from Productos
 
